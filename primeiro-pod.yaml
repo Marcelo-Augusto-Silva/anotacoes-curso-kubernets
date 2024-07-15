@@ -1,0 +1,8 @@
+apiVersion: v1 #Versão da Api
+kind: Pod   # O que quremos 
+metadata:  # Declarar o nome do pod
+  name: primeiro-pod-declarativo
+spec:
+  containers: #Configuraçoes do container o sinal de menos serve para marcar o incios de uma configuraçao do container
+  - name: nginx-container
+    image: nginx:stable
