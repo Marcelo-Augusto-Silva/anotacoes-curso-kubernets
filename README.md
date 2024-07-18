@@ -14,3 +14,9 @@ kubectl describe pod = descreve o pod
 kubectl delete pod [nome do pod] = Deletar um pod
 
 kubectl delete -f primeiro-pod.yaml = deletar um pod passando arquivo
+
+kubectl get pod -o wide = mostra todos os pods e os ips de cada pod
+
+kubectl get svc [ou service] = comando usado para listar os services
+
+kubectl exec -it [nome do pod] -- bash = comando para abrir o bash no pod 
