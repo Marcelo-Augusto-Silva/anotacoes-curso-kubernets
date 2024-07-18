@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service #Criar um servico
+metadata:
+  name: svc-pod-2
+spec:
+  type: ClusterIP #tipo do cluster ou container
+  selector: #colocar as labels
+    app: segundo-pod
+  ports:
+    - port: 9000 #porta que vai escutar
+      targetPort: 80 #porta que vai despachar

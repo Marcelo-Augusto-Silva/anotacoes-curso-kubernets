@@ -20,3 +20,9 @@ kubectl get pod -o wide = mostra todos os pods e os ips de cada pod
 kubectl get svc [ou service] = comando usado para listar os services
 
 kubectl exec -it [nome do pod] -- bash = comando para abrir o bash no pod 
+
+Cluster Ip é um servico que faz com que outros pods se comuniquem 
+
+
+Node Port seve para abrir comunicação para o mundo externo, permitir que o host ou outros computadores acessem o pod
+

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-2
+  labels: #label serve para fazer a ligacao do pod com o service, onde o service ira achar o pod
+    app: segundo-pod
+    alura: cursos
+
+spec:
+  containers:
+  - name: container-pod-2
+    image: nginx:latest
+    ports:
+      - containerPort: 80
