@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - name: portal-noticias-container
-    image: aluracursos/portal-noticia:1
+    image: aluracursos/portal-noticias:1
