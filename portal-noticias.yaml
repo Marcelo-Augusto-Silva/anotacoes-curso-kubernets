@@ -2,7 +2,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: portal-noticias
+  labels:
+    app: portal-noticias
 spec:
   containers:
   - name: portal-noticias-container
     image: aluracursos/portal-noticias:1
+    ports:
+      - containerPort: 80 #Onde ele vai escutar se deixar só uma porta ele vai escutar e despachar na msm porta
