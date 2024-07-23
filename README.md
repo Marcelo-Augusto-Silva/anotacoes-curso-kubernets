@@ -35,3 +35,5 @@ kubectl delete pods --all = Apaga todos os pods
 
 kubectl delete svc --all = Apaga todos os serviços
 
+mysql -u root -p = comando para entrar com o usuario root no pod de banco de dados
+
