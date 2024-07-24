@@ -10,10 +10,19 @@ spec:
       image: aluracursos/mysql-db:1
       ports:
         - containerPort: 3306 #Por padrao, deixamos a porta 3306 para rodas o banco de dados
-      env: #Declarar as variaveis do Banco de dados
-        - name: "MYSQL_ROOT_PASSWORD"
-          value: "1234567890"
-        - name: "MYSQL_DATABASE"
-          value: "empresa"
-        - name: "MYSQL_PASSWORD"
-          value: "123456789"
+    #  env: #Declarar as variaveis do Banco de dados
+    #    - name: "MYSQL_ROOT_PASSWORD"
+    #      value: "1234567890"
+    #    - name: "MYSQL_DATABASE"
+    #      value: "empresa"
+    #    - name: "MYSQL_PASSWORD"
+    #      value: "123456789"
+   #   env:
+    #    - name: MYSQL_ROOT_PASSWORD
+    #      valueFrom:
+    #        configMapKeyRef:
+    #          name: db-configmap
+    #          key: MYQSL_ROOT_PASSWORD
+      envFrom:
+        - configMapRef:
+            name: db-configmap

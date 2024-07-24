@@ -37,3 +37,7 @@ kubectl delete svc --all = Apaga todos os serviços
 
 mysql -u root -p = comando para entrar com o usuario root no pod de banco de dados
 
+configmap serve para colocarmos a confiuraçao de arquivos
+
+kubectl get configmap = mostra todos os configmap
+
