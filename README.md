@@ -41,3 +41,15 @@ configmap serve para colocarmos a confiuraçao de arquivos
 
 kubectl get configmap = mostra todos os configmap
 
+
+
+
+Anotações da parte 2 do curso da alura
+
+
+
+Replica Set serve para encapsular um ou mais pods e pode gerenciar um ou mais pod
+
+
+
+

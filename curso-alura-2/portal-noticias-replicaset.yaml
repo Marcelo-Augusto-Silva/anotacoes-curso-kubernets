@@ -1,0 +1,23 @@
+apiVersion: apps/v1  # em replica set a versap é essa
+kind: ReplicaSet
+metadata:
+  name: portal-noticias-replicaset # Nome do replicaset
+spec: # Aqui nós colocamos o template ou seja as especificações do pod
+  template:
+    metadata:
+      name: portal-noticias
+      labels:
+        app: portal-noticias
+    spec:
+      containers:
+        - name: portal-noticias-container
+          image: aluracursos/portal-noticias:1
+          ports:
+            - containerPort: 80 #Onde ele vai escutar se deixar só uma porta ele vai escutar e despachar na msm porta
+          envFrom:
+            - configMapRef:
+                name: portal-configmap
+  replicas: 3 # aqui voce coloca o numero de replicas do pod 
+  selector:
+    matchLabels:
+      app: portal-noticias # Essa label tem que ser igual a o label do pod
