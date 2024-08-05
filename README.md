@@ -50,6 +50,13 @@ Anotações da parte 2 do curso da alura
 
 Replica Set serve para encapsular um ou mais pods e pode gerenciar um ou mais pod
 
+kubectl get rs = mostra todos os replicaset
+kubectl get replicaset = mostra todos os replicaset
+
+Deployment e replicasets servem para a mesma função
+
+O deployment ele tem uma camada a mais que o replicaset, quando você cria um deployment, automaticamente você está criando um replicaset
+
 
 
 
