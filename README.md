@@ -57,6 +57,13 @@ Deployment e replicasets servem para a mesma função
 
 O deployment ele tem uma camada a mais que o replicaset, quando você cria um deployment, automaticamente você está criando um replicaset
 
+Assim como para versionar o codigo temos o Git, para versionar a versao do container temos o Deployment
 
+kubectl rollout history deployment nginx-deployment = mostra todas as alterações que teve no Deployment
 
+kubectl apply -f nginx-deployment.yaml --record = atualiza o pod e deixa registrado 
+
+kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Definindo  a imagem com versão latest" = Esse comando server para você deixar escrito o que você alterou no deployment, nesse caso colocamos "Definindo a imagem com versão latest"
+
+kubectl rollout undo deployment nginx-deployment --to-revision=1  = Esse comando server para você voltar uma versâo que você quer 
 

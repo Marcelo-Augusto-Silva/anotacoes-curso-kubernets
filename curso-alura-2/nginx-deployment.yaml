@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment # O tipo é Deployment, o deployment é igual o replicaset a unica diferença é o kind ue é Deployment
 metadata:
   name: nginx-deployment
@@ -12,9 +12,9 @@ spec:
     spec:
       containers:
         - name: nginx-container
-          image: nginx:stable
+          image: nginx:latest
           ports:
             - containerPort: 80 # Vaii escutar e responder na porta 80
-selector:
-  matchLabels:
-    app: nginx-pod
+  selector:
+    matchLabels:
+      app: nginx-pod
