@@ -67,3 +67,8 @@ kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Definin
 
 kubectl rollout undo deployment nginx-deployment --to-revision=1  = Esse comando server para você voltar uma versâo que você quer 
 
+
+Persistencia de dados
+
+Os volumes servem para manter a persistencia dos dados, os Volumes possuem ciclos de vida independentes dos containers porém são dependentes dos pods
+
