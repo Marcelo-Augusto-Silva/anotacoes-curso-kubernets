@@ -72,3 +72,8 @@ Persistencia de dados
 
 Os volumes servem para manter a persistencia dos dados, os Volumes possuem ciclos de vida independentes dos containers porém são dependentes dos pods
 
+Para criar um volume no linux voce tem que criar a pasta quee irá ser compartilhada dentro do minikube, voce rodaa o seguinte comando
+
+minikube ssh = irá entrar dentro do minikube, após isso você deverá criar a pasta que seŕa compartilhada
+
+Você tbm pode colocar o Type = DirectoryOrCreate e ele irá criar o volume se não tiver a pasta especificadaa 

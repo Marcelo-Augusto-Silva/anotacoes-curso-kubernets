@@ -10,12 +10,16 @@ spec:
         - mountPath: /volume-dentro-do-container # Nome que o volume vai ter dentro do container
           name: primeiro-volume # Referenciando o nome do volume que está escrito na linha linha name: primeiro-voume
     - name: jenkins-container
-      image: jenkins:alpine
+      image: jenkins/jenkins:alpine
       volumeMounts:
         - mountPath: /volume-dentro-do-container
           name: primeiro-volume
   volumes:
       - name: primeiro-volume
         hostPath:
-          path: /C/Users/GU/Desktop/Primeiro-volume # Caminho da pasta que irá salvar ps arquivos
-          type: Directory
+          #path: /C/Users/GU/Desktop/Primeiro-volume # Caminho da pasta que irá salvar ps arquivoscno windoown
+          path: /home/primeiro-volume # Caminho no linux
+          #type: Directory
+          type: DirectoryOrCreate  # Irá criar o volume, caso o não ache a pasta especificada 
+
+
