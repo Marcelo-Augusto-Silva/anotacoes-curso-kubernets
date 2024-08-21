@@ -77,3 +77,6 @@ Para criar um volume no linux voce tem que criar a pasta quee irá ser compartil
 minikube ssh = irá entrar dentro do minikube, após isso você deverá criar a pasta que seŕa compartilhada
 
 Você tbm pode colocar o Type = DirectoryOrCreate e ele irá criar o volume se não tiver a pasta especificadaa 
+
+Um StatefulSet serve para manter a persistencia dos dados, quando um pod é riniciado ele não perde os dados
+
