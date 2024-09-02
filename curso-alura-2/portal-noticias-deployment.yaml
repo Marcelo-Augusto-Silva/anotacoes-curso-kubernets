@@ -17,6 +17,10 @@ spec: # Aqui nós colocamos o template ou seja as especificações do pod
           envFrom:
             - configMapRef:
                 name: portal-configmap
+          livenessProbe: # Serve para verificiar se o POd está funcionando, aqui você definee as regras que irá verificar se o Pod está funcionando
+            httpGet: #irá fazer uma requisição Get na porta 80
+              path: 
+              port: 80
   replicas: 3 # aqui voce coloca o numero de replicas do pod 
   selector:
     matchLabels:

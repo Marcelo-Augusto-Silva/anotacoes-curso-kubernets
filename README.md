@@ -80,3 +80,10 @@ Você tbm pode colocar o Type = DirectoryOrCreate e ele irá criar o volume se n
 
 Um StatefulSet serve para manter a persistencia dos dados, quando um pod é riniciado ele não perde os dados
 
+kubectl get pvc = mostra todos os persistentVolumeCLaim
+
+kubectl get pv = mostra todos os persistentvolume
+
+kubectl get sc = mostra todos  os StorageCLass
+
+kubectl get pods --watch = acompanha a criacao do pod
