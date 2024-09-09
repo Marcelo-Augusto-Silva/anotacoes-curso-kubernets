@@ -23,13 +23,27 @@ spec:
               mountPath: /var/www/html/uploads
             - name: sessao
               mountPath: /tmp
-      volumes:
-        - name: imagens
-          persistentVolumeClaim:
-            claimName: imagens-pvc
-        - name: sessao
-          persistentVolumeClaim:
-            claimName: sessao-pvc
+    #  volumes:
+     #   - name: imagens
+      #    persistentVolumeClaim:
+       #     claimName: imagens-pvc
+        #- name: sessao
+         # persistentVolumeClaim:
+          #  claimName: sessao-pvc
+          livenessProbe: # Serve para verificiar se o POd está funcionando, aqui você definee as regras que irá verificar se o Pod está funcionando
+            httpGet: #irá fazer uma requisição Get na porta 80
+              path: /inserir_noticias.php
+              port: 80
+            periodSeconds: 10 # Periodo em segundos qeu ele irá verificar 
+            failureThreshold: 3 # Quantas falhas eu permito antes de eu executtar o reinicio de um container
+            initialDelaySeconds: 20 # Define o tempo de Delay em que ele irá começar dnv os testes
+          readinessProbe: # Serve para verificiar se o POd está funcionando, aqui você definee as regras que irá verificar se o Pod está funcionando
+            httpGet: #irá fazer uma requisição Get na porta 80
+              path: /
+              port: 80
+            periodSeconds: 10 # Periodo em segundos qeu ele irá verificar 
+            failureThreshold: 3 # Quantas falhas eu permito antes de eu executtar o reinicio de um container porem no readiness dps que passar o numero especificado, ele irá mandar as msgs mesmo se n tiver funcionando 
+            initialDelaySeconds: 20
 
 
   selector:

@@ -87,3 +87,9 @@ kubectl get pv = mostra todos os persistentvolume
 kubectl get sc = mostra todos  os StorageCLass
 
 kubectl get pods --watch = acompanha a criacao do pod
+
+O liveness probe server para verificar se o pod está funcionando
+
+O readness probe serve para ver se o container está funcionando 
+
+O HPA server para escalar os pods, conforme a utilizaçaão dos recursos, ele aumenta ou diminui a quantidade de POD, assim balanceando a carga

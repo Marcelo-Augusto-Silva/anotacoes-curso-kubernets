@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: portal-noticias-hpa
+spec:
+  scaleTargetRef: # Aqui nós referenciamos o pod em que o autoscalater irá funcionar
+    apiVersion: apps/v1
+    kind: Deployment
+    name: portal-noticias-deployment
+  minReplicas: 1 # Numero minimo de replicas e maximo de replicas
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50   # Aqui nós definimos quando ira ser ativado, nesse caso, quando ele chegar nos 50% dee processamento de cpu

@@ -19,8 +19,22 @@ spec: # Aqui nós colocamos o template ou seja as especificações do pod
                 name: portal-configmap
           livenessProbe: # Serve para verificiar se o POd está funcionando, aqui você definee as regras que irá verificar se o Pod está funcionando
             httpGet: #irá fazer uma requisição Get na porta 80
-              path: 
+              path: /
               port: 80
+            periodSeconds: 10 # Periodo em segundos qeu ele irá verificar 
+            failureThreshold: 3 # Quantas falhas eu permito antes de eu executtar o reinicio de um container
+            initialDelaySeconds: 20 # Define o tempo de Delay em que ele irá começar dnv os testes
+          readinessProbe: # Serve para verificiar se o POd está funcionando, aqui você definee as regras que irá verificar se o Pod está funcionando
+            httpGet: #irá fazer uma requisição Get na porta 80
+              path: /
+              port: 80
+            periodSeconds: 10 # Periodo em segundos qeu ele irá verificar 
+            failureThreshold: 3 # Quantas falhas eu permito antes de eu executtar o reinicio de um container porem no readiness dps que passar o numero especificado, ele irá mandar as msgs mesmo se n tiver funcionando 
+            initialDelaySeconds: 20
+          resources: # Aqui nós especificamos quanto de CPU o pod irá usar, nesse caso 10m
+            requests:
+              cpu: 10m
+
   replicas: 3 # aqui voce coloca o numero de replicas do pod 
   selector:
     matchLabels:
