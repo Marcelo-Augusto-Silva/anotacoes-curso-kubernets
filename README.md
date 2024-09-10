@@ -93,3 +93,7 @@ O liveness probe server para verificar se o pod está funcionando
 O readness probe serve para ver se o container está funcionando 
 
 O HPA server para escalar os pods, conforme a utilizaçaão dos recursos, ele aumenta ou diminui a quantidade de POD, assim balanceando a carga
+
+Para habilitar o servidor de metricas no linux, voce precisa addicionar o comando 
+minikube addons enable metrics-server
+
